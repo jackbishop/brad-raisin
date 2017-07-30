@@ -19,14 +19,14 @@ if(isset($_POST['email'])) {
     if(!isset($_POST['first_name']) ||
         !isset($_POST['last_name']) ||
         !isset($_POST['email']) ||
-        !isset($_POST['message']) {
+        !isset($_POST['comments'])) {
         died('We are sorry, but there appears to be a problem with the form you submitted.');
     }
 
     $first_name = $_POST['first_name']; // required
     $last_name = $_POST['last_name']; // required
     $email_from = $_POST['email']; // required
-    $telephone = $_POST['message']; // required
+    $comments = $_POST['comments']; // required
 
     $error_message = "";
     $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
@@ -40,8 +40,8 @@ if(isset($_POST['email'])) {
   if(!preg_match($string_exp,$last_name)) {
     $error_message .= 'The Last Name you entered does not appear to be valid.<br />';
   }
-  if(strlen($message) < 2) {
-    $error_message .= 'The Message you entered do not appear to be valid.<br />';
+  if(strlen($comments) < 2) {
+    $error_message .= 'The Comments you entered do not appear to be valid.<br />';
   }
   if(strlen($error_message) > 0) {
     died($error_message);
@@ -72,29 +72,30 @@ $headers = 'From: '.$email_from."\r\n".
 <head>
 <LINK REL="stylesheet" HREF="creative.css" TYPE="text/css" />
 <META HTTP-EQUIV="Refresh" CONTENT="8; URL=http://www.bradraisin.com">
-</head>
 
+<style>
+body {background-color: #000000;
+font: Arial, Helvetica, Sans Serif;
+color: #ffffff;
+}
+</style>
+</head>
+<html>
 <body>
 <table width="900" border="0" align="center" cellpadding="0" cellspacing="0">
 
   <tr>
-    <td height="58" align="center" valign="top"><img src="images/topbanner.jpg" width="950" height="86"></td>
+    <td height="58" align="center" valign="top"><img src="img/name.jpg"></td>
   </tr>
   <tr>
-    <td height="58" align="center" valign="top" background="images/bg1.png"></p>
-      <table width="785" border="0" align="center" cellpadding="0">
-        <tr>
-            <td width="781" height="16" align="left" valign="top"><img src="images/confirm.jpg" width="875" height="600"></td>
-          </tr>
-        </table>
+    <td height="58" align="center" valign="top" ><br><br><h3>Thank you for contacting Brad.<br>If your message requires a response, <br>He will get back to you as soon as he can.<br>
+    Thank you.</h3><br><br><img src="img/decorativewhite.png">
+
       <br />
       <br />
     <br /></td>
   </tr>
-  <tr>
-    <td align="center" valign="top" background="images/footer2.png"><p>&nbsp;</p>
-    <p>&nbsp;</p></td>
-  </tr>
+
 </table>
 </body>
 </html>
