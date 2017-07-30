@@ -156,6 +156,7 @@ aside {
     color: #F05F40;
   }
 }
+
 header {
   position: relative;
   width: 100%;
@@ -166,10 +167,20 @@ header {
   -o-background-size: cover;
   background-position: center;
   background-image: url('../img/brad1.jpg');
-  background-attachment: fixed;
   text-align: center;
   color: white;
 }
+
+/*
+@media (max-width: 767px) {
+  header {
+    min-height: 300px;
+    background-size: contain;
+    background-position-y: 50px;
+  }
+}
+*/
+
 header .header-content {
   position: relative;
   text-align: center;
@@ -192,8 +203,14 @@ header .header-content .header-content-inner p {
   font-size: 16px;
   margin-bottom: 10px;
 }
+
+.album-thumbnail {
+  margin-bottom: 20px;
+}
+
 @media (min-width: 768px) {
   header {
+    height: 800px;
     min-height: 100%;
   }
   header .header-content {
@@ -219,6 +236,28 @@ header .header-content .header-content-inner p {
     margin-right: auto;
   }
 }
+
+.album-info-section {
+  margin-bottom: 20px;
+}
+
+.album-tracks {
+  margin-bottom: 40px;
+}
+
+.bond-meta {
+  padding: 0, 40, 0, 40;
+}
+
+pre.album-info {
+  background: none;
+  border: none;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #FFF;
+  font-size: 12pt;
+  text-align: left;
+}
+
 .section-heading {
   margin-top: 0;
 }
@@ -226,7 +265,22 @@ header .header-content .header-content-inner p {
   max-width: 400px;
   margin: 50px auto 0;
 }
+
+
+
+.container-fluid {
+  padding: 0;
+}
+
+button.navbar-toggle {
+  left: -10%;
+}
+
 @media (min-width: 992px) {
+  #mainNav {
+    padding-right: 20px;
+  }
+
   .service-box {
     margin: 20px auto 0;
   }
@@ -427,6 +481,10 @@ body {
 }
 
 video {
-	width: 90%;
+	width: 80%;
 	height: auto;
+}
+
+input.form-control {
+  margin-left: 25%;
 }
